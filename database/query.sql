@@ -15,5 +15,5 @@ RETURNING *;
 -- name: UpdateNoteById :one
 UPDATE note set title = ?, content = ? WHERE id = ? RETURNING *;
 
--- name: DeleteNoteById :exec
-DELETE FROM note WHERE id = ?;
+-- name: DeleteNoteById :one
+DELETE FROM note WHERE id = ? RETURNING *;
